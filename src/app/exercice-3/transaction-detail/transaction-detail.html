@@ -1,0 +1,9 @@
+<app-header />
+@if (transaction) {
+<p>ID : {{ transaction.id }}</p>
+<p>Montant : {{ transaction.amount }}</p>
+<p>Solde : {{ transaction.balance }}</p>
+<p>Libellé : {{ transaction.label }}</p>
+<p>Description : {{ transaction.description }}</p>
+<p>Date : {{ transaction.date | date : 'dd/MM/y H:mm:ss' }}</p>
+}

@@ -1,0 +1,32 @@
+<h2
+  [style.font-family]="selectedFont"
+  [style.font-size.px]="fontSize"
+  [style.text-align]="alignment"
+>
+  Bonjour {{ userName.toUpperCase() }}
+</h2>
+<form>
+  <p>
+    <label for="name">Nom : </label>
+    <input type="text" name="name" [(ngModel)]="userName" />
+  </p>
+  <p>
+    <label for="font">Police d'écriture : </label>
+    <select name="font" [(ngModel)]="selectedFont">
+      <option value="Arial" selected>Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Calibri">Calibri</option>
+      <option value="Georgia">Georgia</option>
+    </select>
+  </p>
+  <p>
+    <label for="size">Taille de la police : </label>
+    <input type="number" name="size" [(ngModel)]="fontSize" />
+  </p>
+  <p>
+    <label for="alignement">Alignement : </label>
+    <input type="radio" name="alignement" selected value="left" [(ngModel)]="alignment" />Gauche
+    <input type="radio" name="alignement" value="center" [(ngModel)]="alignment" />Centre
+    <input type="radio" name="alignement" value="right" [(ngModel)]="alignment" />Droite
+  </p>
+</form>

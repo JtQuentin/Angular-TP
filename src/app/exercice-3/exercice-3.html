@@ -1,0 +1,23 @@
+<app-header />
+<table border="1">
+  <thead>
+    <tr>
+      <th (click)="sort('id')">ID</th>
+      <th (click)="sort('amount')">Montant</th>
+      <th (click)="sort('balance')">Solde</th>
+      <th (click)="sort('label')">Libellé</th>
+      <th (click)="sort('date')">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (transaction of transactions; track transaction) {
+    <tr (click)="showDetail(transaction.id)">
+      <td>{{ transaction.id }}</td>
+      <td>{{ transaction.amount }}</td>
+      <td>{{ transaction.balance }}</td>
+      <td>{{ transaction.label }}</td>
+      <td>{{ transaction.date | date : 'dd/MM/y H:mm' }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
